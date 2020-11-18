@@ -19,16 +19,15 @@
         android:paddingStart="20dp"
         app:popupTheme="@style/ThemeOverlay.MaterialComponents.Light">
 
-        <com.google.android.material.imageview.ShapeableImageView
+        <ImageView
             android:id="@+id/ivUser"
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:adjustViewBounds="true"
             android:clickable="true"
             android:focusable="true"
-            android:scaleType="centerCrop"
-            android:src="@drawable/defaultavatar"
-            app:shapeAppearanceOverlay="@style/RoundedImageView" />
+            android:scaleType="fitXY"
+            android:src="@drawable/ic_chatbot_64"/>
 
         <TextView
             android:layout_width="wrap_content"

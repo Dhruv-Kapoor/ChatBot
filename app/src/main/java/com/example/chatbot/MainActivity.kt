@@ -1,6 +1,7 @@
 package com.example.chatbot
 
 import android.os.Bundle
+import android.view.inputmethod.InputMethodManager
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
@@ -36,6 +37,10 @@ class MainActivity : AppCompatActivity() {
             etMsg.setText("")
             addUserMessage(userInput)
             processUserInput(userInput)
+        }
+        btnEmoji.setOnClickListener {
+            val inputMethodManager= getSystemService(InputMethodManager::class.java)
+            inputMethodManager.toggleSoftInput(InputMethodManager.SHOW_FORCED, 0)
         }
 
     }
