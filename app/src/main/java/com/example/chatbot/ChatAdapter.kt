@@ -161,6 +161,13 @@ class ReportMessageViewHolder(itemView: View) :
                             if (isFetched){
                                 successLayout.visibility = View.VISIBLE
                                 successLayout.startAnimation(AnimationUtils.loadAnimation(context, R.anim.slide_in_right))
+                                if(message.isPositive){
+                                    tvResult.text = "POSITIVE"
+                                    tvResult.setTextColor(getColor(context, R.color.red))
+                                }else{
+                                    tvResult.text = "NEGATIVE"
+                                    tvResult.setTextColor(getColor(context, R.color.green))
+                                }
                             }else{
                                 failLayout.visibility = View.VISIBLE
                                 failLayout.startAnimation(AnimationUtils.loadAnimation(context, R.anim.slide_in_right))
