@@ -1,11 +1,11 @@
 package com.example.chatbot
 
 import android.os.Bundle
-import android.view.inputmethod.InputMethodManager
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import com.vanniktech.emoji.EmojiManager
+import com.vanniktech.emoji.EmojiPopup
 import com.vanniktech.emoji.google.GoogleEmojiProvider
 import kotlinx.android.synthetic.main.activity_chat.*
 
@@ -32,6 +32,8 @@ class MainActivity : AppCompatActivity() {
 
         rvMessages.adapter = adapter
 
+        val emojiPopup = EmojiPopup.Builder.fromRootView(rootView).build(etMsg)
+
         btnSend.setOnClickListener {
             val userInput = etMsg.text.toString()
             etMsg.setText("")
@@ -39,8 +41,7 @@ class MainActivity : AppCompatActivity() {
             processUserInput(userInput)
         }
         btnEmoji.setOnClickListener {
-            val inputMethodManager= getSystemService(InputMethodManager::class.java)
-            inputMethodManager.toggleSoftInput(InputMethodManager.SHOW_FORCED, 0)
+            emojiPopup.toggle()
         }
 
     }
