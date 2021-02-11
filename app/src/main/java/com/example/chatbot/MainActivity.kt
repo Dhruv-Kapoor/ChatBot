@@ -18,7 +18,7 @@ class MainActivity : AppCompatActivity() {
         viewModel.getList()
     }
     private val adapter by lazy {
-        ChatAdapter(supportFragmentManager, list)
+        ChatAdapter(list)
     }
     private val classifier by lazy {
         Classifier(this)

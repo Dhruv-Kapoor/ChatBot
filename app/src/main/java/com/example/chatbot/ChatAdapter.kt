@@ -18,7 +18,7 @@ import kotlinx.android.synthetic.main.list_item_chat_recv_message.view.tvTime
 import kotlinx.android.synthetic.main.report_message.view.*
 import java.util.*
 
-class ChatAdapter(val supportFragmentManager: FragmentManager, val list: List<Message>) :
+class ChatAdapter(val list: List<Message>) :
     RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
 
